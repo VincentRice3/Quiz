@@ -62,3 +62,19 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+@media (max-width: 600px) {
+    form, .answerContainer, #correct {
+      padding: 10px;
+      font-size: 1rem;
+    }
+  
+    input, select {
+      font-size: 1rem;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  
