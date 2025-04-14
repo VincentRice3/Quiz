@@ -42,7 +42,7 @@ const answerIds = [
 
 function displayQuestions() {
   const getQuizQuestions = Math.floor(Math.random() * questions.length);
-  let formContent = `<input type="hidden" name="quizSet" value="${getQuizQuestions}"> <label for="yourName" required >Please enter your name: </label><br><input type="text" id="yourName" name="yourName" placeholder="Enter Your Name..."></input><br>`;
+  let formContent = `<input type="hidden" name="quizSet" value="${getQuizQuestions}"> <label for="yourName">Please enter your name: </label><br><input type="text" id="yourName" required name="yourName" placeholder="Enter Your Name..."></input><br>`;
   const quizQuestions = questions[getQuizQuestions];
   const quizAnswers = answers[getQuizQuestions];
   console.log(quizAnswers);
