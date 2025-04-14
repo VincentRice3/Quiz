@@ -42,15 +42,16 @@ const answerIds = [
 
 function displayQuestions() {
   const getQuizQuestions = Math.floor(Math.random() * questions.length);
-  let formContent = `<input type="hidden" name="quizSet" value="${getQuizQuestions}"> <label for="yourName">Please enter your name: </label><br><input type="text" id="yourName" name="yourName" placeholder="Enter Your Name..."></input><br>`;
+  let formContent = `<input type="hidden" name="quizSet" value="${getQuizQuestions}"> <label for="yourName" required >Please enter your name: </label><br><input type="text" id="yourName" name="yourName" placeholder="Enter Your Name..."></input><br>`;
   const quizQuestions = questions[getQuizQuestions];
   const quizAnswers = answers[getQuizQuestions];
   console.log(quizAnswers);
   for (let i = 0; i < quizQuestions.length; i++) {
-    formContent += `<label for="${answerIds[i]}">${quizQuestions[i]}</label><br><select name="${answerIds[i]}" id="${answerIds[i]}" required autofocus>`;
+    formContent += `<label for="${answerIds[i]}">${quizQuestions[i]}</label><br><select name="${answerIds[i]}" id="${answerIds[i]}" required autofocus>   <option value="">Select an Answer</option>
+`;
 
     for (let j = 0; j < quizAnswers[i].length; j++) {
-      formContent += `<option value="${quizAnswers[i][j]}">${quizAnswers[i][j]}</option>`;
+      formContent += `<option required value="${quizAnswers[i][j]}">${quizAnswers[i][j]}</option>`;
     }
     formContent += "</select><br><br>";
   }
