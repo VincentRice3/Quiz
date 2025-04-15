@@ -68,7 +68,7 @@ function checkAnswers() {
   if (correct < 5) {
     return `<p class="name">Hi ${yourName}! <br> Thanks for playing <br></p><p class="fail">You only got ${correct} / ${answers[quizSet].length}</p>`;
   } else {
-    return `<p class="name">Hi ${yourName}! <br> Thanks for playing <br></p><p class="pass">Congrats! You got ${correct} / 5</p>`;
+    return `<p class="name">Hi ${yourName}! <br> Thanks for playing <br></p><p class="pass">Congrats! You got ${correct} / ${answers[quizSet].length}</p>`;
   }
 }
 
