@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./form-styles.css">
     <title>JS Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="form-styles.css">
 </head>
-
 <body>
-    <main>
-        <h1>General Knowledge Quiz</h1>
-
-    </main>
-
-    <script src="getQuestions.js"></script>
-
+    <div class="container">
+        <form action="index.html">
+            <label for="quizSelection">Please Choose your category</label>
+            <br>
+            <select required autofocus name="quizSelection" id="quizSelection">
+                <option value="">Select</option>
+                <option hidden value="sports">Sports</option>
+                <option value="music">Music</option>
+                <option hidden value="random">Random</option>
+            </select>
+            <input type="submit" value="Go">
+        </form>
+    </div>
 </body>
-
 </html>
