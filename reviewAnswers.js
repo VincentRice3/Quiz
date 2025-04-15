@@ -30,11 +30,16 @@ let questions = [
     'What year did Britney Spears release her hit song "Toxic"?',
   ],
   [
-    "Where was the first example of paper money used?",
-    "Who is generally considered the inventor of the motor car?",
-    "If you were looking at Iguazu Falls, on what continent would you be?",
-    "What number was the Apollo mission that successfully put a man on the moon for the first time in human history?",
-    "Which of the following languages has the longest alphabet?",
+    "What is the term for three strikes in a row in bowling?",
+    "How many holes are played in a standard round of golf?",
+    "What is the traditional surface for Wimbledon tennis matches?",
+    "Which country won the first FIFA World Cup in 1930?",
+    "Who is the Premier League’s all-time top scorer?",
+    "Which nation has reached three World Cup finals but never won?",
+    "Who was the captain of Spain when they won the 2010 World Cup?",
+    "How many Olympic rings are there?",
+    "How many events are there in a decathlon?",
+    "How long is a marathon in kilometers?",
   ],
 ];
 // Creates array to hold quiz answers
@@ -51,7 +56,18 @@ let answers = [
     "Eight",
     "2003",
   ],
-  ["Turkey", "18", "Grass", "Uruguay", "Alan Shearer", "The Netherlands", "Iker Casillas", "Five", "10", "42.195km"],
+  [
+    "Turkey",
+    "18",
+    "Grass",
+    "Uruguay",
+    "Alan Shearer",
+    "The Netherlands",
+    "Iker Casillas",
+    "Five",
+    "10",
+    "42.195km",
+  ],
 ];
 
 //Creates an array to hold user answers based on values passed from quiz form
