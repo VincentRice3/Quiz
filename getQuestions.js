@@ -75,7 +75,7 @@ const answers = [
   ],
   [
     ["Strike", "Turkey", "Spare"],
-    ["Henry Ford", "18", "Henry M. Leland"],
+    ["16", "18", "14"],
     ["Sand", "Concrete", "Grass"],
     ["Germany", "Uruguay", "Spain"],
     ["Mohammed Salah", "Steven Gerrard", "Alan Shearer"],
