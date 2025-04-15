@@ -6,11 +6,14 @@ function cleanAndCap(str) {
   return temp[0].toUpperCase() + temp.substring(1);
 }
 
+//Determines what quiz questions to display based on user choice
 const chooseQuestions = () => {
     //Grabs values from submitted form in URL
     const userChoice = new URLSearchParams(window.location.search);
     const category = cleanAndCap(userChoice.get("quizSelection"))
+    // Creates variable to hold quiz set number
     let quizSet = 0;
+    // correctly assigns quiz set value based on user choice
     switch (category) {
         case 'Music':
             quizSet = 0;
@@ -28,6 +31,7 @@ const chooseQuestions = () => {
     return quizSet;
 }
 
+// Creates array to hold quiz questions
 const questions = [
   [
     "Which legendary singer, who was a surprise presenter at the 2025 Grammy Awards, has been nominated for 13 Grammys but never won?",
@@ -42,14 +46,20 @@ const questions = [
     'What year did Britney Spears release her hit song "Toxic"?',
   ],
   [
-    "Where was the first example of paper money used?",
-    "Who is generally considered the inventor of the motor car?",
-    "If you were looking at Iguazu Falls, on what continent would you be?",
-    "What number was the Apollo mission that successfully put a man on the moon for the first time in human history?",
-    "Which of the following languages has the longest alphabet?",
+    "What is the term for three strikes in a row in bowling?",
+    "How many holes are played in a standard round of golf?",
+    "What is the traditional surface for Wimbledon tennis matches?",
+    "Which country won the first FIFA World Cup in 1930?",
+    "Who is the Premier League’s all-time top scorer?",
+    "Which nation has reached three World Cup finals but never won?",
+    "Who was the captain of Spain when they won the 2010 World Cup?",
+    "How many Olympic rings are there?",
+    "How many events are there in a decathlon?",
+    "How long is a marathon in kilometers?"
   ],
 ];
 
+// Creates array to hold quiz answers
 const answers = [
   [
     ["Billie Eilish", "Diana Ross", "Sam Smith"],
@@ -64,27 +74,25 @@ const answers = [
     ['2003', '2001', '2004']
   ],
   [
-    ["China", "Turkey", "Greece"],
-    ["Henry Ford", "Karl Benz", "Henry M. Leland"],
-    ["Asia", "Africa", "South America"],
-    ["Apollo 11", "Apollo 12", "Apollo 13"],
-    ["Greek", "Russian", "Arabic"],
+    ["Strike", "Turkey", "Spare"],
+    ["Henry Ford", "18", "Henry M. Leland"],
+    ["Sand", "Concrete", "Grass"],
+    ["Germany", "Uruguay", "Spain"],
+    ["Mohammed Salah", "Steven Gerrard", "Alan Shearer"],
+    ['England', 'Italy', 'The Netherlands'],
+    ['David Villa', 'Fernando Torres', 'Iker Casillas'],
+    ["Five", "Eight", "Ten"],
+    ['10', '8', '12'],
+    ['40.520km', '42.195km', '38.185km']
+
+
   ],
 ];
 
-const answerIds = [
-  "answerOne",
-  "answerTwo",
-  "answerThree",
-  "answerFour",
-  "answerFive",
-  "answerSix",
-  "answerSeven",
-  "answerEight",
-  "answerNine",
-  "answerTen"
-];
+// Creates array of answer input field IDs based on the number of answers in selected quiz
+const answerIds = answers[chooseQuestions()].map((a, i) => `answer${i+1}` );
 
+// Returns quiz form
 function displayQuestions() {
   const getQuizQuestions = chooseQuestions();
   console.log(getQuizQuestions)
@@ -106,12 +114,15 @@ function displayQuestions() {
   return formContent;
 }
 
+//Creates form element
 const formContainer = document.createElement("form");
 
 formContainer.action = "review.html";
 formContainer.method = "get";
 
+// Adds quiz to form container
 formContainer.innerHTML = displayQuestions();
 
+//Adds form element to page
 document.body.appendChild(formContainer);
 
