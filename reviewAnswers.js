@@ -80,15 +80,17 @@ function checkAnswers() {
   let correct = 0;
   questions = questions[quizSet];
   answers = answers[quizSet];
+  console.log(answers[quizSet])
+  console.log(answers)
   for (let i = 0; i < answers.length; i++) {
     if (answers[i] === userAnswerArray[i]) {
       correct++;
     }
   }
   if (correct < 5) {
-    return `<p class="name">Hi ${yourName}! <br> Thanks for playing <br></p><p class="fail">You only got ${correct} / ${answers[quizSet].length}</p>`;
+    return `<p class="name">Hi ${yourName}! <br> Thanks for playing <br></p><p class="fail">You only got ${correct} / ${answers.length}</p>`;
   } else {
-    return `<p class="name">Hi ${yourName}! <br> Thanks for playing <br></p><p class="pass">Congrats! You got ${correct} / ${answers[quizSet].length}</p>`;
+    return `<p class="name">Hi ${yourName}! <br> Thanks for playing <br></p><p class="pass">Congrats! You got ${correct} / ${answers.length}</p>`;
   }
 }
 
